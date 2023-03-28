@@ -1,0 +1,7 @@
+AddHandler application/x-httpd-php74 php
+Options -MultiViews
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.html [QSA,L]
+    RewriteCond %{SERVER_PORT} 80
+    RewriteRule ^(.*)$ https://oistigmes.foxnet-polska.pl/$1 [R,L]
